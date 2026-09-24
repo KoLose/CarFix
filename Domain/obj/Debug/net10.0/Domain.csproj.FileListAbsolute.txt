@@ -1,0 +1,12 @@
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/bin/Debug/net10.0/Domain.deps.json
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/bin/Debug/net10.0/Domain.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/bin/Debug/net10.0/Domain.pdb
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.csproj.AssemblyReference.cache
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.AssemblyInfoInputs.cache
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.AssemblyInfo.cs
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.csproj.CoreCompileInputs.cache
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/refint/Domain.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/Domain.pdb
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/ref/Domain.dll

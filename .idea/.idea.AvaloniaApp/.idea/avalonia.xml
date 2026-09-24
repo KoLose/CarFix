@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaApp/App.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/MainWindow.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Auth/Login.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Auth/LoginUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Auth/RegisterUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Colors.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Styles.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
