@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaApp.Pages.Auth.SidebarUC">
+    <Border Background="#070715" Padding="20 20 20 20">
+        <DockPanel LastChildFill="False">
+            <Image Classes="Profile-Logo-UI"
+                   Source="/Styles/Images/car-logo.png"
+                   DockPanel.Dock="Top"
+            />
+        </DockPanel>
+    </Border>
+</UserControl>

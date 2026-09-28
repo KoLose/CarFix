@@ -9,6 +9,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        MainContent.Content = new Pages.Auth.RegisterUC();
+        MainContent.Content = new Pages.Auth.LoginUC();
+        Sidebar.Content = new Pages.Auth.SidebarUC();
     }
 }

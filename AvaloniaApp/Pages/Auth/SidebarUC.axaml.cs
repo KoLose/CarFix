@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaApp.Pages.Auth;
 
-public partial class RegisterUC : UserControl
+public partial class SidebarUC : UserControl
 {
-    public RegisterUC()
+    public SidebarUC()
     {
         InitializeComponent();
     }

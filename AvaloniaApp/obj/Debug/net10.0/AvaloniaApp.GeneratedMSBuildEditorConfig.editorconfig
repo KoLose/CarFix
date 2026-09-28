@@ -29,10 +29,40 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Sidebar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/HeaderUC.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/LoginUC.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/RegisterUC.axaml]
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/SidebarUC.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/HeaderUC.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Sidebar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Sidebar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Auth.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Login.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Sidebar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Header.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Sidebar.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Styles.axaml]

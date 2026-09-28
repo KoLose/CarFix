@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="AvaloniaApp.MainWindow"
         Title="AvaloniaApp">
-        <Grid RowDefinitions="*, 100" ColumnDefinitions="150, *">
+        <Grid RowDefinitions="*, 100" ColumnDefinitions="75, *">
                 
                 <Border Grid.Row="0" Grid.Column="0" Background="#070715" Grid.RowSpan="2">
-                        <TextBlock Text="Sidebar"/>
+                        <ContentControl x:Name="Sidebar"/>
                 </Border>
                 
                 <Border Grid.Row="0" Grid.Column="1" Background="#17172c">
@@ -16,7 +16,7 @@
                 </Border>
                 
                 <Border Grid.Row="1" Grid.Column="1" Background="#1f1f39">
-                        <TextBlock Text="Header"/>
+                        <ContentControl x:Name="Header"/>
                 </Border>
         </Grid>
 </Window>

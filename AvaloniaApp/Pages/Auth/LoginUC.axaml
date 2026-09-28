@@ -4,5 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Auth.LoginUC">
-    Welcome to Avalonia!
+    
+    <Border Classes="Auth-container">
+        <StackPanel Spacing="15" Width="250">
+            <TextBox x:Name="LoginBox" PlaceholderText="Логин"/>
+            <TextBox x:Name="PasswordBox" PlaceholderText="Пароль"/>
+            <Button Click="LoginBtn" Content="Войти" Classes="Button-UI"/>
+        </StackPanel>
+    </Border>
 </UserControl>

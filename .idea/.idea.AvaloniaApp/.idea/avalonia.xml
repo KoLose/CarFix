@@ -5,10 +5,30 @@
       <map>
         <entry key="AvaloniaApp/App.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/MainWindow.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Admin/Sidebar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Auth/HeaderUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Pages/Auth/Login.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Pages/Auth/LoginUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Pages/Auth/RegisterUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Auth/SidebarUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Header.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/HeaderUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/LayoutComponents/HeaderUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/LayoutComponents/SidebarUC.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Manager/Sidebar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Pages/Mechanic/Sidebar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/Auth.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/Header.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/Login.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/LoginStyle.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/RegisterStyle.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/Auth/Sidebar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Styles/Colors.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/LayoutComponents/Header.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/LayoutComponents/Logo.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/LayoutComponents/Profile.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/LayoutComponents/SideBar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
+        <entry key="AvaloniaApp/Styles/LayoutComponents/Sidebar.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
         <entry key="AvaloniaApp/Styles/Styles.axaml" value="AvaloniaApp/AvaloniaApp.csproj" />
       </map>
     </option>

@@ -1,11 +1,21 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
-    <Style x:Key="PageContainer" Selector="StackPanel.page-container">
-        <Setter Property="Background" Value="#1f1f39"/>
-        <Setter Property="Width" Value="300"/>
-        <Setter Property="Spacing" Value="12"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-</ResourceDictionary>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        
+        <Style Selector="Button.Button-UI">
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        
+        <Style Selector="TextBlock.TextBlock-UI">
+                <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        
+        <Style Selector="Image.Profile-Logo-UI">
+                <Setter Property="Width" Value="50"></Setter>
+                <Setter Property="Height" Value="50"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        
+</Styles>
