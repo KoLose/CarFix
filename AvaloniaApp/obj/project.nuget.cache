@@ -1,30 +1,32 @@
 {
   "version": 2,
-  "dgSpecHash": "WIwAu8Tx3/g=",
+  "dgSpecHash": "NfF1CMldFto=",
   "success": true,
   "projectFilePath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
   "expectedPackageFiles": [
-    "/Users/kolose/.nuget/packages/avalonia/12.0.3/avalonia.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.angle.windows.natives/2.1.25547.20250602/avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia/12.1.0/avalonia.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.angle.windows.natives/2.1.27548.20260419/avalonia.angle.windows.natives.2.1.27548.20260419.nupkg.sha512",
     "/Users/kolose/.nuget/packages/avalonia.buildservices/11.3.2/avalonia.buildservices.11.3.2.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.desktop/12.0.3/avalonia.desktop.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.fonts.inter/12.0.3/avalonia.fonts.inter.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.freedesktop/12.0.3/avalonia.freedesktop.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.freedesktop.atspi/12.0.3/avalonia.freedesktop.atspi.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.harfbuzz/12.0.3/avalonia.harfbuzz.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.native/12.0.3/avalonia.native.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.remote.protocol/12.0.3/avalonia.remote.protocol.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.skia/12.0.3/avalonia.skia.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.themes.fluent/12.0.3/avalonia.themes.fluent.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.win32/12.0.3/avalonia.win32.12.0.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/avalonia.x11/12.0.3/avalonia.x11.12.0.3.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.desktop/12.1.0/avalonia.desktop.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.fonts.inter/12.1.0/avalonia.fonts.inter.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.freedesktop/12.1.0/avalonia.freedesktop.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.freedesktop.atspi/12.1.0/avalonia.freedesktop.atspi.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.harfbuzz/12.1.0/avalonia.harfbuzz.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.native/12.1.0/avalonia.native.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.remote.protocol/12.1.0/avalonia.remote.protocol.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.skia/12.1.0/avalonia.skia.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.themes.fluent/12.1.0/avalonia.themes.fluent.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.win32/12.1.0/avalonia.win32.12.1.0.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/avalonia.x11/12.1.0/avalonia.x11.12.1.0.nupkg.sha512",
     "/Users/kolose/.nuget/packages/avaloniaui.diagnosticssupport/2.2.1/avaloniaui.diagnosticssupport.2.2.1.nupkg.sha512",
     "/Users/kolose/.nuget/packages/harfbuzzsharp/8.3.1.3/harfbuzzsharp.8.3.1.3.nupkg.sha512",
     "/Users/kolose/.nuget/packages/harfbuzzsharp.nativeassets.linux/8.3.1.3/harfbuzzsharp.nativeassets.linux.8.3.1.3.nupkg.sha512",
     "/Users/kolose/.nuget/packages/harfbuzzsharp.nativeassets.macos/8.3.1.3/harfbuzzsharp.nativeassets.macos.8.3.1.3.nupkg.sha512",
     "/Users/kolose/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/8.3.1.3/harfbuzzsharp.nativeassets.webassembly.8.3.1.3.nupkg.sha512",
     "/Users/kolose/.nuget/packages/harfbuzzsharp.nativeassets.win32/8.3.1.3/harfbuzzsharp.nativeassets.win32.8.3.1.3.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/microcom.runtime/0.11.4/microcom.runtime.0.11.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/material.icons/3.0.1/material.icons.3.0.1.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/material.icons.avalonia/3.0.1/material.icons.avalonia.3.0.1.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/microcom.runtime/0.11.6/microcom.runtime.0.11.6.nupkg.sha512",
     "/Users/kolose/.nuget/packages/microsoft.entityframeworkcore/10.0.0/microsoft.entityframeworkcore.10.0.0.nupkg.sha512",
     "/Users/kolose/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.0/microsoft.entityframeworkcore.abstractions.10.0.0.nupkg.sha512",
     "/Users/kolose/.nuget/packages/microsoft.entityframeworkcore.analyzers/10.0.0/microsoft.entityframeworkcore.analyzers.10.0.0.nupkg.sha512",
@@ -37,12 +39,61 @@
     "/Users/kolose/.nuget/packages/microsoft.extensions.options/10.0.0/microsoft.extensions.options.10.0.0.nupkg.sha512",
     "/Users/kolose/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
     "/Users/kolose/.nuget/packages/microsoft.io.recyclablememorystream/3.0.1/microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/skiasharp/3.119.4-preview.1.1/skiasharp.3.119.4-preview.1.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.linux/3.119.4-preview.1.1/skiasharp.nativeassets.linux.3.119.4-preview.1.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.macos/3.119.4-preview.1.1/skiasharp.nativeassets.macos.3.119.4-preview.1.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.webassembly/3.119.4-preview.1.1/skiasharp.nativeassets.webassembly.3.119.4-preview.1.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.win32/3.119.4-preview.1.1/skiasharp.nativeassets.win32.3.119.4-preview.1.1.nupkg.sha512",
-    "/Users/kolose/.nuget/packages/tmds.dbus.protocol/0.92.0/tmds.dbus.protocol.0.92.0.nupkg.sha512"
+    "/Users/kolose/.nuget/packages/skiasharp/3.119.4/skiasharp.3.119.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.linux/3.119.4/skiasharp.nativeassets.linux.3.119.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.macos/3.119.4/skiasharp.nativeassets.macos.3.119.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.webassembly/3.119.4/skiasharp.nativeassets.webassembly.3.119.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/skiasharp.nativeassets.win32/3.119.4/skiasharp.nativeassets.win32.3.119.4.nupkg.sha512",
+    "/Users/kolose/.nuget/packages/tmds.dbus.protocol/0.94.1/tmds.dbus.protocol.0.94.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "AvaloniaApp depends on Avalonia (>= 12.0.10) but Avalonia 12.0.10 was not found. Avalonia 12.1.0 was resolved instead.",
+      "projectPath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "libraryId": "Avalonia",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "AvaloniaApp depends on Avalonia.Desktop (>= 12.0.10) but Avalonia.Desktop 12.0.10 was not found. Avalonia.Desktop 12.1.0 was resolved instead.",
+      "projectPath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "libraryId": "Avalonia.Desktop",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "AvaloniaApp depends on Avalonia.Fonts.Inter (>= 12.0.10) but Avalonia.Fonts.Inter 12.0.10 was not found. Avalonia.Fonts.Inter 12.1.0 was resolved instead.",
+      "projectPath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "libraryId": "Avalonia.Fonts.Inter",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "AvaloniaApp depends on Avalonia.Themes.Fluent (>= 12.0.10) but Avalonia.Themes.Fluent 12.0.10 was not found. Avalonia.Themes.Fluent 12.1.0 was resolved instead.",
+      "projectPath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/AvaloniaApp.csproj",
+      "libraryId": "Avalonia.Themes.Fluent",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

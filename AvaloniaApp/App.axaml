@@ -6,10 +6,14 @@
              
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="avares://Material.Icons.Avalonia/MaterialIconStyles.xaml" />
         <StyleInclude Source="/Styles/Styles.axaml"/>
         
         <StyleInclude Source="/Styles/Auth/Auth.axaml"/>
         <StyleInclude Source="/Styles/Auth/Login.axaml"/>
         <StyleInclude Source="/Styles/Auth/Sidebar.axaml"/>
+        
+        <StyleInclude Source="/Styles/LayoutComponents/Header.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/LayoutComponents/Sidebar.axaml"></StyleInclude>
     </Application.Styles>
 </Application>

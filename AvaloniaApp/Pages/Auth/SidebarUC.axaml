@@ -9,7 +9,12 @@
             <Image Classes="Profile-Logo-UI"
                    Source="/Styles/Images/car-logo.png"
                    DockPanel.Dock="Top"
-            />
+            />  
+            
+            <StackPanel Classes="Sidebar-Auth-UI">
+                <Button Classes="Sidebar-Button-UI" ><Image Source="/Styles/Images/car-logo.png"></Image></Button>
+                <Button Classes="Sidebar-Button-UI"></Button>
+            </StackPanel>
         </DockPanel>
     </Border>
 </UserControl>

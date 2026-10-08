@@ -11,5 +11,6 @@ public partial class MainWindow : Window
         InitializeComponent();
         MainContent.Content = new Pages.Auth.LoginUC();
         Sidebar.Content = new Pages.Auth.SidebarUC();
+        Header.Content = new Pages.HeaderUC();
     }
 }

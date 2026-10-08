@@ -99,3 +99,5 @@
 /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/obj/Debug/net10.0/Avalonia.466377FB.Up2Date
 /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/obj/Debug/net10.0/AvaloniaApp.genruntimeconfig.cache
 /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/obj/Debug/net10.0/ref/AvaloniaApp.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/bin/Debug/net10.0/Material.Icons.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/bin/Debug/net10.0/Material.Icons.Avalonia.dll
