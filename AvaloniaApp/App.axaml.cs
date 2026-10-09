@@ -1,11 +1,13 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Infastructure.DbContext;
 
 namespace AvaloniaApp;
 
 public partial class App : Application
 {
+    public static ContextDb DbContext { get; } = new ContextDb();
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);

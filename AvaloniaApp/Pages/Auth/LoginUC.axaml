@@ -7,9 +7,9 @@
     
     <Border Classes="Auth-container">
         <StackPanel Spacing="15" Width="250">
-            <TextBox x:Name="LoginBox" PlaceholderText="Логин"/>
-            <TextBox x:Name="PasswordBox" PlaceholderText="Пароль"/>
-            <Button Click="LoginBtn" Content="Войти" Classes="Button-UI"/>
+            <TextBox x:Name="LoginBox" PlaceholderText="L o g i n"/>
+            <TextBox x:Name="PasswordBox" PlaceholderText="P a s s w o r d"/>
+            <Button Click="LoginBtn" Content="S i g n  I n" Classes="Button-UI"/>
         </StackPanel>
     </Border>
 </UserControl>

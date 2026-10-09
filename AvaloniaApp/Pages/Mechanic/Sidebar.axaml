@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="90" d:DesignHeight="768"
-             x:Class="AvaloniaApp.Pages.Mechanic.Sidebar">
+             x:Class="AvaloniaApp.Pages.Mechanic.Sidebar"
+             Background="#070715">
     
-    <Border Background="#070715">
         <StackPanel Orientation="Vertical" Spacing="80" Margin="0,40,0,0">
             
             <avalonia:MaterialIcon Kind="Car" 
@@ -46,5 +46,4 @@
                                    ToolTip.Tip="Профиль"/>
             
         </StackPanel>
-    </Border>
 </UserControl>
