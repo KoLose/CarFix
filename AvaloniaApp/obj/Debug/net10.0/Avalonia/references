@@ -24,14 +24,17 @@
 /Users/kolose/.nuget/packages/avaloniaui.diagnosticssupport/2.2.1/lib/net10.0/AvaloniaUI.DiagnosticsSupport.Avalonia.dll
 /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Domain/obj/Debug/net10.0/ref/Domain.dll
 /Users/kolose/.nuget/packages/harfbuzzsharp/8.3.1.3/lib/net8.0/HarfBuzzSharp.dll
+/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/Infastructure/obj/Debug/net10.0/ref/Infastructure.dll
 /Users/kolose/.nuget/packages/material.icons.avalonia/3.0.1/lib/net8.0/Material.Icons.Avalonia.dll
 /Users/kolose/.nuget/packages/material.icons/3.0.1/lib/netstandard2.0/Material.Icons.dll
 /Users/kolose/.nuget/packages/microcom.runtime/0.11.6/lib/net8.0/MicroCom.Runtime.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/Microsoft.CSharp.dll
 /Users/kolose/.nuget/packages/microsoft.entityframeworkcore.abstractions/10.0.0/lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/kolose/.nuget/packages/microsoft.entityframeworkcore/10.0.0/lib/net10.0/Microsoft.EntityFrameworkCore.dll
+/Users/kolose/.nuget/packages/microsoft.entityframeworkcore.relational/10.0.0/lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/kolose/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.0/lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/kolose/.nuget/packages/microsoft.extensions.caching.memory/10.0.0/lib/net10.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/kolose/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/kolose/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/kolose/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.0/lib/net10.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/kolose/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.0/lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll
@@ -45,6 +48,8 @@
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/Microsoft.Win32.Registry.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/mscorlib.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/netstandard.dll
+/Users/kolose/.nuget/packages/npgsql/10.0.0/lib/net10.0/Npgsql.dll
+/Users/kolose/.nuget/packages/npgsql.entityframeworkcore.postgresql/10.0.0/lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/kolose/.nuget/packages/skiasharp/3.119.4/ref/net10.0/SkiaSharp.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/System.AppContext.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/System.Buffers.dll

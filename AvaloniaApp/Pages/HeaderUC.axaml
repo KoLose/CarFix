@@ -14,7 +14,7 @@
                                    Width="30" 
                                    Classes="clickable"
                                    Foreground="#7a7a96"/>
-            <TextBlock Text="S E R V C I C E S" 
+            <TextBlock Text="S E R V I C E S" 
                        Classes="Header-TextBlock-UI"/>
         </StackPanel>
                                

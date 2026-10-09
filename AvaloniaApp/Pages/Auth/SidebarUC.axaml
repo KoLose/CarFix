@@ -4,17 +4,4 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Auth.SidebarUC">
-    <Border Background="#070715" Padding="20 20 20 20">
-        <DockPanel LastChildFill="False">
-            <Image Classes="Profile-Logo-UI"
-                   Source="/Styles/Images/car-logo.png"
-                   DockPanel.Dock="Top"
-            />  
-            
-            <StackPanel Classes="Sidebar-Auth-UI">
-                <Button Classes="Sidebar-Button-UI" ><Image Source="/Styles/Images/car-logo.png"></Image></Button>
-                <Button Classes="Sidebar-Button-UI"></Button>
-            </StackPanel>
-        </DockPanel>
-    </Border>
 </UserControl>

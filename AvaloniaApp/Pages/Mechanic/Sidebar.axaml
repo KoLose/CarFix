@@ -2,17 +2,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="90" d:DesignHeight="768"
              x:Class="AvaloniaApp.Pages.Mechanic.Sidebar">
-    <Border Background="#070715" Width="300">
-        <DockPanel>
-            <Image Source="/Styles/Images/profile.png"
-                   Width="120" 
-                   Height="120"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   DockPanel.Dock="Bottom"
-            />
-        </DockPanel>
+    
+    <Border Background="#070715">
+        <StackPanel Orientation="Vertical" Spacing="80" Margin="0,40,0,0">
+            
+            <avalonia:MaterialIcon Kind="Car" 
+                                   Width="40" 
+                                   Classes="clickable"
+                                   Foreground="#7a7a96"
+                                   Margin="0,0,0,80"
+                                   HorizontalAlignment="Center"/>
+            
+            <avalonia:MaterialIcon Kind="ClipboardText" 
+                                   Width="30" 
+                                   Classes="clickable"
+                                   Foreground="#7a7a96"
+                                   HorizontalAlignment="Center"
+                                   ToolTip.Tip="Заказы"/>
+            
+            <avalonia:MaterialIcon Kind="Wrench" 
+                                   Width="30" 
+                                   Classes="clickable"
+                                   Foreground="#7a7a96"
+                                   HorizontalAlignment="Center"
+                                   ToolTip.Tip="Диагностика"/>
+            
+            <avalonia:MaterialIcon Kind="PackageVariant" 
+                                   Width="30" 
+                                   Classes="clickable"
+                                   Foreground="#7a7a96"
+                                   HorizontalAlignment="Center"
+                                   ToolTip.Tip="Склад"/>
+            
+            <avalonia:MaterialIcon Kind="Account" 
+                                   Width="30" 
+                                   Classes="clickable"
+                                   Foreground="#7a7a96"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,470,0,0"
+                                   ToolTip.Tip="Профиль"/>
+            
+        </StackPanel>
     </Border>
 </UserControl>

@@ -9,17 +9,25 @@ build_property.AvaloniaNameGeneratorAttachDevTools = true
 build_property.AvaloniaUseCompiledBindingsByDefault = false
 build_property.AvaloniaMainPackageVersion = 12.1.0
 build_property.AvaloniaPreviewerNetCoreToolPath = /Users/kolose/.nuget/packages/avalonia/12.1.0/buildTransitive//../tools/net8.0/designer/Avalonia.Designer.HostApp.dll
-build_property.AvaloniaResourcePaths = /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Images/car-logo.png,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Images/profile.png,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/App.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/MainWindow.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/HeaderUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/LoginUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/SidebarUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/HeaderUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Auth.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Login.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Header.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Styles.axaml
+build_property.AvaloniaResourcePaths = /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/App.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/MainWindow.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Orders.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Revenue.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Storage.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/HeaderUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/LoginUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Auth/SidebarUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/HeaderUC.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Clients.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Mechanics.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Orders.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Pages/Orders.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Pages/Storage.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Auth.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Login.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Auth/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Header.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/LayoutComponents/Sidebar.axaml,/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Styles/Styles.axaml
 build_property.TargetFramework = net10.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = AvaloniaApp
 build_property.ProjectDir = /Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/
 build_property.EnableComHosting = 
@@ -31,6 +39,15 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Orders.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Revenue.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Pages/Storage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Admin/Sidebar.axaml]
@@ -48,7 +65,22 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/HeaderUC.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Clients.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Mechanics.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Pages/Orders.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Manager/Sidebar.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Pages/Orders.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Pages/Storage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/kolose/Development/AvaloniaProjects/CarFix/AvaloniaApp/AvaloniaApp/Pages/Mechanic/Sidebar.axaml]
