@@ -11,7 +11,6 @@
             
             <avalonia:MaterialIcon Kind="Car" 
                                    Width="40" 
-                                   Classes="clickable"
                                    Foreground="#7a7a96"
                                    Margin="0,0,0,80"
                                    HorizontalAlignment="Center"/>
@@ -22,13 +21,6 @@
                                    Foreground="#7a7a96"
                                    HorizontalAlignment="Center"
                                    ToolTip.Tip="Заказы"/>
-            
-            <avalonia:MaterialIcon Kind="Wrench" 
-                                   Width="30" 
-                                   Classes="clickable"
-                                   Foreground="#7a7a96"
-                                   HorizontalAlignment="Center"
-                                   ToolTip.Tip="Диагностика"/>
             
             <avalonia:MaterialIcon Kind="PackageVariant" 
                                    Width="30" 
