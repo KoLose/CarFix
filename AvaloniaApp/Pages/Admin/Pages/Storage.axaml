@@ -1,8 +1,19 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Admin.Pages.Storage">
-    to
+    <Border Padding="24">
+        <Grid RowDefinitions="Auto,*">
+            <TextBlock Text="Склад" Classes="PageTitle"/>
+            <DataGrid x:Name="Grid" Grid.Row="1"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Артикул" Binding="{Binding Article}" Width="140"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="120"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding SalePrice}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
 </UserControl>

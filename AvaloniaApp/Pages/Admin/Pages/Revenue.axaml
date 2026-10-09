@@ -1,8 +1,14 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Admin.Pages.Revenue">
-    Avalonia!
+    <Border Padding="30">
+        <StackPanel Spacing="16" Width="420" HorizontalAlignment="Left">
+            <TextBlock Text="Выручка" Classes="PageTitle"/>
+            <TextBlock x:Name="PaymentsText" Classes="TextBlock-UI" FontSize="16"/>
+            <TextBlock x:Name="PartsText" Classes="TextBlock-UI" FontSize="16"/>
+            <Border Height="1" Background="#7a7a96"/>
+            <TextBlock x:Name="ProfitText" Classes="TextBlock-UI" FontSize="20" FontWeight="SemiBold"/>
+            <Button Content="Обновить" Classes="Button-UI" Click="RefreshClick" Width="160" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Border>
 </UserControl>

@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApp.Pages.Mechanic.Windows.TransferOrderWindow"
+        Title="Передать заказ"
+        Width="420" Height="360"
+        WindowStartupLocation="CenterOwner"
+        Background="#17172c">
+    <StackPanel Margin="20" Spacing="12">
+        <TextBlock Text="Доступные механики (навыки + свободное время)" Classes="TextBlock-UI" TextWrapping="Wrap"/>
+        <DataGrid x:Name="Grid" Height="200" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Передать" Classes="Button-UI" Click="TransferClick"/>
+    </StackPanel>
+</Window>

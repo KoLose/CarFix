@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS carfixdb;
+CREATE DATABASE carfixdb;

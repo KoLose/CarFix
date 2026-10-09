@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using AvaloniaApp.Data;
-using Infastructure.DbContext;
+using AvaloniaApp.Helpers;
 using Infastructure.Repositories;
 
 namespace AvaloniaApp.Pages.Auth;
@@ -11,21 +11,21 @@ public partial class LoginUC : UserControl
     public LoginUC()
     {
         InitializeComponent();
-        
     }
 
     private async void LoginBtn(object? sender, RoutedEventArgs e)
     {
         if (string.IsNullOrEmpty(LoginBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             return;
-        
-        await using var context = new ContextDb();
-        var userRepository = new UserRepository(context);
-        
+
+        var userRepository = new UserRepository(App.DbContext);
         var user = await userRepository.GetByCredentialsAsync(LoginBox.Text, PasswordBox.Text);
 
         if (user == null)
+        {
+            await DialogHelper.ShowAsync(TopLevel.GetTopLevel(this) as Window, "Неверный логин или пароль");
             return;
+        }
 
         VariableData.CurrentUser = user;
 
@@ -38,9 +38,9 @@ public partial class LoginUC : UserControl
                 3 => new Manager.Sidebar(),
                 _ => main.Sidebar.Content
             };
-            
+
             main.Header.Content = new AvaloniaApp.Pages.HeaderUC();
-            
+
             main.MainContent.Content = user.RoleId switch
             {
                 1 => new Admin.Pages.Orders(),

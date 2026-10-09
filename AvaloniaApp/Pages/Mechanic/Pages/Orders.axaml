@@ -1,8 +1,22 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Mechanic.Pages.Orders">
-    Welcome to Avalonia!
+    <Border Padding="24">
+        <Grid RowDefinitions="Auto,*">
+            <TextBlock Text="Мои заказы (двойной клик — детали)" Classes="PageTitle"/>
+            <DataGrid x:Name="Grid" Grid.Row="1"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False"
+                      DoubleTapped="OnDoubleTapped">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding DateCreated}" Width="160"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" Width="120"/>
+                    <DataGridTextColumn Header="Авто" Binding="{Binding Automobile.Brand}" Width="100"/>
+                    <DataGridTextColumn Header="Модель" Binding="{Binding Automobile.Model}" Width="100"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Automobile.Client.Name}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
 </UserControl>

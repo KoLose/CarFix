@@ -1,0 +1,17 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApp.Pages.Manager.Windows.RegisterClientWindow"
+        Title="Регистрация клиента"
+        Width="400" Height="320"
+        WindowStartupLocation="CenterOwner"
+        Background="#17172c">
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Имя" Classes="TextBlock-UI"/>
+        <TextBox x:Name="NameBox" Classes="FormBox"/>
+        <TextBlock Text="Логин" Classes="TextBlock-UI"/>
+        <TextBox x:Name="LoginBox" Classes="FormBox"/>
+        <TextBlock Text="Пароль" Classes="TextBlock-UI"/>
+        <TextBox x:Name="PasswordBox" Classes="FormBox"/>
+        <Button Content="Зарегистрировать" Classes="Button-UI" Click="SaveClick" Margin="0,12,0,0"/>
+    </StackPanel>
+</Window>

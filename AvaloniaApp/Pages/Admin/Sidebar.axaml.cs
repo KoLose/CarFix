@@ -10,7 +10,7 @@ public partial class Sidebar : UserControl
     public Sidebar()
     {
         InitializeComponent();
-        
+
         if (Content is StackPanel stack)
         {
             foreach (var child in stack.Children)
@@ -34,7 +34,7 @@ public partial class Sidebar : UserControl
             "Orders" => new Orders(),
             "Revenue" => new Revenue(),
             "Warehouse" => new Storage(),
-            "Profile" => new Profile(),
+            "Profile" => new AvaloniaApp.Pages.Profile(),
             _ => main.MainContent.Content
         };
     }

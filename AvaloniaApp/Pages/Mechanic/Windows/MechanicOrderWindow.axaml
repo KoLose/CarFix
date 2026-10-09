@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApp.Pages.Mechanic.Windows.MechanicOrderWindow"
+        Title="Работа с заказом"
+        Width="560" Height="620"
+        WindowStartupLocation="CenterOwner"
+        Background="#17172c">
+    <ScrollViewer>
+        <StackPanel Margin="20" Spacing="10">
+            <TextBlock x:Name="InfoText" Classes="TextBlock-UI" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button x:Name="TakeBtn" Content="Забрать себе" Classes="Button-UI" Width="160" Click="TakeClick"/>
+                <Button Content="Передать другому" Classes="Button-UI" Width="180" Click="TransferClick"/>
+            </StackPanel>
+            <TextBlock Text="Услуги заказа" Classes="TextBlock-UI" Margin="0,8,0,0"/>
+            <DataGrid x:Name="ServicesGrid" Height="140" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Услуга" Binding="{Binding Service.Name}" Width="*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding ActualPrice}" Width="80"/>
+                    <DataGridCheckBoxColumn Header="Готово" Binding="{Binding IsCompleted}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Завершить выбранную услугу" Classes="Button-UI" Click="CompleteServiceClick"/>
+            <TextBlock Text="Комментарий" Classes="TextBlock-UI"/>
+            <TextBox x:Name="CommentBox" Classes="FormBox" AcceptsReturn="True" Height="70"/>
+            <Button Content="Добавить комментарий" Classes="Button-UI" Click="CommentClick"/>
+            <TextBlock x:Name="StatusText" Foreground="#7a7a96" TextWrapping="Wrap"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

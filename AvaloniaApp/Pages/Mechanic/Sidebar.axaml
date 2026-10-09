@@ -7,35 +7,44 @@
              x:Class="AvaloniaApp.Pages.Mechanic.Sidebar"
              Background="#070715">
     
-        <StackPanel Orientation="Vertical" Spacing="80" Margin="0,40,0,0">
+    <StackPanel Orientation="Vertical" Spacing="25" Margin="0,80,0,0">
+        
+        <avalonia:MaterialIcon Kind="Car" 
+                               Width="40" 
+                               Foreground="#7a7a96"
+                               Margin="0,0,0,80"
+                               HorizontalAlignment="Center"/>
             
-            <avalonia:MaterialIcon Kind="Car" 
-                                   Width="40" 
-                                   Foreground="#7a7a96"
-                                   Margin="0,0,0,80"
-                                   HorizontalAlignment="Center"/>
+        <Border Height="1" Width="60" Background="#7a7a96" Margin="0,10"/>
+        
+        <avalonia:MaterialIcon Kind="ClipboardText" 
+                               Width="30" 
+                               Classes="clickable"
+                               Foreground="#7a7a96"
+                               HorizontalAlignment="Center"
+                               ToolTip.Tip="Мои заказы"
+                               Tag="Orders"/>
             
-            <avalonia:MaterialIcon Kind="ClipboardText" 
-                                   Width="30" 
-                                   Classes="clickable"
-                                   Foreground="#7a7a96"
-                                   HorizontalAlignment="Center"
-                                   ToolTip.Tip="Заказы"/>
+        <Border Height="1" Width="60" Background="#7a7a96" Margin="0,10"/>
+        
+        <avalonia:MaterialIcon Kind="PackageVariant" 
+                               Width="30" 
+                               Classes="clickable"
+                               Foreground="#7a7a96"
+                               HorizontalAlignment="Center"
+                               ToolTip.Tip="Запрос на склад"
+                               Tag="Storage"/>
+        
+        <Border Height="1" Width="60" Background="#7a7a96" Margin="0,10"/>
+        
+        <avalonia:MaterialIcon Kind="Account" 
+                               Width="30" 
+                               Classes="clickable"
+                               Foreground="#7a7a96"
+                               HorizontalAlignment="Center"
+                               Margin="0,400,0,0"
+                               ToolTip.Tip="Профиль"
+                               Tag="Profile"/>
             
-            <avalonia:MaterialIcon Kind="PackageVariant" 
-                                   Width="30" 
-                                   Classes="clickable"
-                                   Foreground="#7a7a96"
-                                   HorizontalAlignment="Center"
-                                   ToolTip.Tip="Склад"/>
-            
-            <avalonia:MaterialIcon Kind="Account" 
-                                   Width="30" 
-                                   Classes="clickable"
-                                   Foreground="#7a7a96"
-                                   HorizontalAlignment="Center"
-                                   Margin="0,470,0,0"
-                                   ToolTip.Tip="Профиль"/>
-            
-        </StackPanel>
+    </StackPanel>
 </UserControl>

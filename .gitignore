@@ -1,0 +1,9 @@
+﻿## .NET
+**/bin/
+**/obj/
+.idea/
+.vs/
+*.user
+.DS_Store
+AvaloniaDemo/
+_req.txt

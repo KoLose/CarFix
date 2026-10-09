@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/.idea/
+**/.vs/
+**/AvaloniaDemo/
+**/.git/
+**/_req.txt
+**/*.user
+**/.DS_Store
+agent-transcripts/

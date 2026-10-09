@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApp.Pages.Manager.Windows.AddCarWindow"
+        Title="Добавить машину"
+        Width="420" Height="520"
+        WindowStartupLocation="CenterOwner"
+        Background="#17172c">
+    <StackPanel Margin="20" Spacing="8">
+        <TextBlock Text="Клиент" Classes="TextBlock-UI"/>
+        <ComboBox x:Name="ClientBox">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Марка" Classes="TextBlock-UI"/>
+        <TextBox x:Name="BrandBox" Classes="FormBox"/>
+        <TextBlock Text="Модель" Classes="TextBlock-UI"/>
+        <TextBox x:Name="ModelBox" Classes="FormBox"/>
+        <TextBlock Text="Год" Classes="TextBlock-UI"/>
+        <TextBox x:Name="YearBox" Classes="FormBox"/>
+        <TextBlock Text="VIN" Classes="TextBlock-UI"/>
+        <TextBox x:Name="VinBox" Classes="FormBox"/>
+        <TextBlock Text="Госномер" Classes="TextBlock-UI"/>
+        <TextBox x:Name="PlateBox" Classes="FormBox"/>
+        <TextBlock Text="Пробег" Classes="TextBlock-UI"/>
+        <TextBox x:Name="MileageBox" Classes="FormBox"/>
+        <Button Content="Сохранить" Classes="Button-UI" Click="SaveClick" Margin="0,12,0,0"/>
+    </StackPanel>
+</Window>

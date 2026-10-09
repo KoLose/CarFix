@@ -1,8 +1,28 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Mechanic.Pages.Storage">
-    Welcome to Avalonia!
+    <Border Padding="24">
+        <Grid RowDefinitions="Auto,Auto,*">
+            <TextBlock Text="Запрос инструментов / запчастей" Classes="PageTitle"/>
+            <StackPanel Grid.Row="1" Width="360" Spacing="10" HorizontalAlignment="Left" Margin="0,0,0,20">
+                <TextBlock Text="Название" Classes="TextBlock-UI"/>
+                <TextBox x:Name="NameBox" Classes="FormBox"/>
+                <TextBlock Text="Количество" Classes="TextBlock-UI"/>
+                <TextBox x:Name="QtyBox" Classes="FormBox"/>
+                <TextBlock Text="Комментарий" Classes="TextBlock-UI"/>
+                <TextBox x:Name="NoteBox" Classes="FormBox" AcceptsReturn="True" Height="70"/>
+                <Button Content="Отправить запрос" Classes="Button-UI" Click="SendClick"/>
+            </StackPanel>
+            <DataGrid x:Name="Grid" Grid.Row="2"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding CreatedAt}" Width="160"/>
+                    <DataGridTextColumn Header="Позиция" Binding="{Binding ItemName}" Width="*"/>
+                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="80"/>
+                    <DataGridTextColumn Header="Комментарий" Binding="{Binding Note}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
 </UserControl>

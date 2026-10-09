@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AvaloniaApp.Pages.Manager.Pages.Cars">
+    <Border Padding="24">
+        <Grid RowDefinitions="Auto,Auto,*">
+            <TextBlock Text="Автомобили" Classes="PageTitle"/>
+            <Button Grid.Row="1" Content="Добавить машину клиенту" Classes="Button-UI"
+                    Width="260" HorizontalAlignment="Left" Margin="0,0,0,16" Click="AddClick"/>
+            <DataGrid x:Name="Grid" Grid.Row="2"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Name}" Width="140"/>
+                    <DataGridTextColumn Header="Марка" Binding="{Binding Brand}" Width="100"/>
+                    <DataGridTextColumn Header="Модель" Binding="{Binding Model}" Width="100"/>
+                    <DataGridTextColumn Header="Год" Binding="{Binding Year}" Width="70"/>
+                    <DataGridTextColumn Header="Госномер" Binding="{Binding PlateNumber}" Width="120"/>
+                    <DataGridTextColumn Header="VIN" Binding="{Binding VIN}" Width="*"/>
+                    <DataGridTextColumn Header="Пробег" Binding="{Binding Mileage}" Width="90"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,8 +1,20 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaApp.Pages.Manager.Pages.Clients">
-    Welcome to Avalonia!
+    <Border Padding="24">
+        <Grid RowDefinitions="Auto,Auto,*">
+            <TextBlock Text="Клиенты" Classes="PageTitle"/>
+            <Button Grid.Row="1" Content="Регистрация клиента" Classes="Button-UI"
+                    Width="220" HorizontalAlignment="Left" Margin="0,0,0,16" Click="RegisterClick"/>
+            <DataGrid x:Name="Grid" Grid.Row="2"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="180"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
 </UserControl>
