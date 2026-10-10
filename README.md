@@ -1,186 +1,110 @@
 # CarFix
 
-Система управления автосервисом на Avalonia (.NET 9) + PostgreSQL.
+Автосервис: Avalonia + **PostgreSQL**.
 
-Поддерживаемые роли: **Admin**, **Manager**, **Mechanic**.
+Логины: `admin`/`admin` · `manager`/`manager` · `mech1`/`mech1`
 
 ---
 
-## Быстрый старт на любом устройстве (Windows / macOS)
+## Mac — самый простой способ (без Docker)
 
-Нужен [Docker Desktop](https://www.docker.com/products/docker-desktop/) — **сначала запусти Docker Desktop**, дождись статуса Running, затем:
+Другу на Mac: **только это**.
 
+### 1. Скачай проект
 ```bash
 git clone https://github.com/KoLose/CarFix.git
 cd CarFix
 git checkout feature/role-pages-and-db
-docker compose up -d --build
 ```
 
-Открой в браузере:
-
-**http://localhost:6080/vnc.html** → кнопка **Connect**
-
-| Сервис | Адрес |
-|--------|--------|
-| UI (через браузер) | http://localhost:6080/vnc.html |
-| PostgreSQL | `localhost:5433` |
-
-БД внутри Docker: пользователь `postgres`, пароль `123`, база `carfixdb` (данные уже загружены).
-
-Остановка:
-
+### 2. Один раз разреши скрипт и запусти
 ```bash
-docker compose down
+chmod +x scripts/start-mac.sh
+./scripts/start-mac.sh
 ```
 
-Если Docker не установлен или не запускается — используй локальный запуск ниже.
+Скрипт сам:
+- поставит PostgreSQL (через Homebrew), если его нет  
+- создаст базу `carfixdb`  
+- поставит .NET, если нужно  
+- откроет окно программы  
+
+Если спросит пароль Mac — это нормально (Homebrew).  
+Первый запуск может занять несколько минут.
+
+### 3. Войди
+- Админ: `admin` / `admin`  
+- Менеджер: `manager` / `manager`  
+- Механик: `mech1` / `mech1`  
 
 ---
 
-## Локальный запуск (Windows) — рекомендуемый вариант для разработки
+## Windows — тоже просто (без Docker)
 
-### Требования
-- [.NET 9 SDK](https://dotnet.microsoft.com/download)
-- PostgreSQL (служба должна быть **Running**)
-- Учётка БД по умолчанию: `postgres` / `123`
-
-### 1. База данных
+1. Установи [PostgreSQL](https://www.postgresql.org/download/windows/) — пароль пользователя `postgres` сделай **`123`**  
+2. Установи [.NET 9 SDK](https://dotnet.microsoft.com/download)  
+3. В PowerShell из папки проекта:
 
 ```powershell
-cd Infastructure\Sql
-.\setup_db.ps1
+.\scripts\start-windows.ps1
 ```
 
 Или вручную:
-
 ```powershell
-$env:PGPASSWORD='123'
-psql -U postgres -h 127.0.0.1 -c "DROP DATABASE IF EXISTS carfixdb;"
-psql -U postgres -h 127.0.0.1 -c "CREATE DATABASE carfixdb;"
-psql -U postgres -h 127.0.0.1 -d carfixdb -f carfix_seed.sql
-```
-
-Строка подключения: `AvaloniaApp/appsettings.json`
-
-```
-Host=localhost;Port=5432;Database=carfixdb;Username=postgres;Password=123
-```
-
-### 2. Приложение
-
-```powershell
-cd AvaloniaApp
-dotnet restore
+cd Infastructure\Sql
+.\setup_db.ps1
+cd ..\..\AvaloniaApp
 dotnet run
 ```
 
-Должно открыться окно **AvaloniaApp** с формой входа.
+---
 
-Подробная инструкция также в файле `CarFix_Guide.docx`.
+## Что делает программа сама
+
+При старте CarFix:
+1. Ищет PostgreSQL на компьютере (Windows `postgres/123` или Mac-пользователь Homebrew)  
+2. Создаёт базу `carfixdb`, если её нет  
+3. Создаёт таблицы и тестовые данные, если база пустая  
+
+**Docker не обязателен.** PostgreSQL — обязателен (ставит скрипт на Mac).
 
 ---
 
-## Вход по ролям
+## Если на Mac «не работает»
 
-На экране логина введи логин и пароль:
-
-| Роль | Логин | Пароль | Что открывается |
-|------|--------|--------|-----------------|
-| Администратор (руководитель) | `admin` | `admin` | Заказы, выручка, склад, профиль |
-| Менеджер | `manager` | `manager` | Клиенты, машины, заказы, расписание, механики, профиль |
-| Механик | `mech1` | `mech1` | Мои заказы, запрос на склад, профиль |
-
-Дополнительные механики: `mech2`…`mech5` (пароль = логин).  
-Ещё менеджер: `manager2` / `manager2`.
-
-### Как работать за Админа
-1. Войти как `admin` / `admin`
-2. Слева: иконки заказов, выручки, склада, профиля
-3. Выручка = сумма платежей − сумма закупок запчастей
-
-### Как работать за Менеджера
-1. Войти как `manager` / `manager`
-2. **Клиенты** → «Регистрация клиента»
-3. **Машины** → «Добавить машину клиенту»
-4. **Заказы** → двойной клик по строке → назначить механика (если занят в это время — отказ)
-5. **Расписание** → выбрать слот и заменить механика (нельзя, если у текущего есть активные заказы в день)
-6. **Механики** → увольнение только без активных заказов
-
-### Как работать за Механика
-1. Войти как `mech1` / `mech1`
-2. **Мои заказы** → двойной клик
-3. **Забрать себе** — нужны навыки (`UserService`) и смена в расписании
-4. **Передать другому** — список механиков со навыками и свободным временем
-5. Завершение услуги блокируется, если на складе мало запчастей
-6. Можно добавить комментарий на любом этапе
-7. **Запрос на склад** — форма недостающих позиций
-
----
-
-## Локальный запуск на macOS
-
-### Вариант A — Docker
-См. раздел «Быстрый старт». UI открывается в браузере. Docker Desktop должен быть запущен.
-
-### Вариант B — нативно
-1. Установи .NET 9 SDK и PostgreSQL (`brew install postgresql@16` или Docker только для БД)
-2. Создай БД `carfixdb` и выполни `Infastructure/Sql/carfix_seed.sql`
-3. В `AvaloniaApp/appsettings.json` укажи хост/пароль
-4. Запуск:
-
+1. Установи Homebrew: https://brew.sh  
+2. Открой **Terminal**, перейди в папку `CarFix` (`cd .../CarFix`)  
+3. Снова:
 ```bash
-cd AvaloniaApp
-dotnet run
+chmod +x scripts/start-mac.sh
+./scripts/start-mac.sh
 ```
+4. Если окно не открылось — скопируй красный текст ошибки из Terminal и пришли другу/автору  
 
-Если БД только в Docker:
-
-```
-Host=localhost;Port=5433;Database=carfixdb;Username=postgres;Password=123
-```
-
----
-
-## Если окно не появляется / «проект не запускается»
-
-1. **PostgreSQL не запущен** — в Windows: службы → `postgresql-x64-…` → Запустить.
-2. **БД пустая** — выполни `Infastructure\Sql\setup_db.ps1`.
-3. **Неверный пароль в appsettings.json** — должно быть `postgres` / `123`, база `carfixdb`.
-4. **Docker** — без запущенного Docker Desktop `docker compose` не работает; используй локальный `dotnet run`.
-5. Нужен **.NET 9 SDK** (`dotnet --list-sdks`).
-
-При ошибке БД приложение показывает диалог с текстом ошибки (не зависает без окна).
-
----
-
-## Структура решения
-
-```
-AvaloniaApp/       — UI (Avalonia)
-Domain/            — модели
-Infastructure/     — EF Core, репозитории, SQL
-docker-compose.yml
-Dockerfile
-CarFix_Guide.docx  — инструкция Word
-README.md          — этот файл
-DOCKER.md          — детали Docker
-```
-
----
-
-## Полезные команды Docker
-
+Проверка, что PostgreSQL жив:
 ```bash
-# пересобрать (Docker Desktop уже запущен)
+brew services list
+psql -d carfixdb -c "SELECT 1"
+```
+
+---
+
+## Роли (кратко)
+
+| Роль | Логин | Что делать |
+|------|--------|------------|
+| Админ | `admin` | заказы, выручка, склад |
+| Менеджер | `manager` | клиенты, машины, заказы (двойной клик), расписание |
+| Механик | `mech1` | мои заказы (двойной клик), запрос на склад |
+
+---
+
+## Docker (не обязательно)
+
+Только если хочешь UI в браузере. Сначала запусти Docker Desktop:
+```bash
 docker compose up -d --build
-
-# логи приложения
-docker logs -f carfix-app
-
-# только база
-docker compose up -d db
-
-# остановка
-docker compose down
 ```
+Открой http://localhost:6080/vnc.html  
+
+Подробнее: [DOCKER.md](DOCKER.md) · Word: `CarFix_Guide.docx`

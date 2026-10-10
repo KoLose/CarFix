@@ -11,14 +11,11 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        // Npgsql + DateTime (timestamptz)
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-        // Инициализация БД ДО UI — иначе GetResult() на UI-потоке даёт deadlock и окно не появляется
         try
         {
-            using var db = new ContextDb();
-            DbInitializer.InitializeAsync(db).ConfigureAwait(false).GetAwaiter().GetResult();
+            DatabaseBootstrap.EnsureReadyAsync().ConfigureAwait(false).GetAwaiter().GetResult();
         }
         catch (Exception ex)
         {

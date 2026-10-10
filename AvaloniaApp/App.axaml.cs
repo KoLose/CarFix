@@ -30,10 +30,9 @@ public partial class App : Application
                 {
                     await DialogHelper.ShowAsync(
                         desktop.MainWindow,
-                        "Не удалось подключиться к базе данных.\n\n" +
-                        "1) Запустите PostgreSQL (служба postgresql)\n" +
-                        "2) Выполните Infastructure\\Sql\\setup_db.ps1\n" +
-                        "3) Проверьте appsettings.json: postgres / 123 / carfixdb\n\n" +
+                        "Не удалось подключиться к PostgreSQL.\n\n" +
+                        "Mac: ./scripts/start-mac.sh\n" +
+                        "Windows: .\\scripts\\start-windows.ps1\n\n" +
                         error,
                         "Ошибка БД");
                 };
