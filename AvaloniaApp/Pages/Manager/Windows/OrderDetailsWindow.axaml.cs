@@ -25,8 +25,8 @@ public partial class OrderDetailsWindow : Window
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var orders = new OrderRepository(App.DbContext);
-        var users = new UserRepository(App.DbContext);
+        var orders = new OrderRepository(App.CreateDbContext());
+        var users = new UserRepository(App.CreateDbContext());
         _order = await orders.GetByIdAsync(_orderId);
         if (_order == null) return;
 
@@ -46,7 +46,7 @@ public partial class OrderDetailsWindow : Window
     {
         if (_order == null || MechanicBox.SelectedItem is not User mechanic) return;
 
-        var users = new UserRepository(App.DbContext);
+        var users = new UserRepository(App.CreateDbContext());
         var busy = await users.IsBusyAtAsync(mechanic.Id, _order.DateCreated, _order.Id);
         if (busy)
         {
@@ -58,7 +58,7 @@ public partial class OrderDetailsWindow : Window
         if (_order.StatusId == StatusIds.New)
             _order.StatusId = StatusIds.InProgress;
 
-        var orders = new OrderRepository(App.DbContext);
+        var orders = new OrderRepository(App.CreateDbContext());
         await orders.UpdateAsync(_order);
         ErrorText.Text = string.Empty;
         await DialogHelper.ShowAsync(this, "Механик назначен");
@@ -74,7 +74,7 @@ public partial class OrderDetailsWindow : Window
             return;
         }
 
-        var comments = new CommentRepository(App.DbContext);
+        var comments = new CommentRepository(App.CreateDbContext());
         if (await comments.HasFinalClientReviewAsync(_order.Id))
         {
             await DialogHelper.ShowAsync(this, "Финальный отзыв уже оставлен");

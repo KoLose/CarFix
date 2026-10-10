@@ -19,7 +19,7 @@ public partial class Storage : UserControl
     private async System.Threading.Tasks.Task LoadAsync()
     {
         if (VariableData.CurrentUser == null) return;
-        var repo = new PartRequestRepository(App.DbContext);
+        var repo = new PartRequestRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetByUserAsync(VariableData.CurrentUser.Id);
     }
 
@@ -32,7 +32,7 @@ public partial class Storage : UserControl
             return;
         }
 
-        var repo = new PartRequestRepository(App.DbContext);
+        var repo = new PartRequestRepository(App.CreateDbContext());
         await repo.AddAsync(new PartRequest
         {
             ItemName = NameBox.Text.Trim(),

@@ -23,7 +23,7 @@ public partial class RegisterClientWindow : Window
             return;
         }
 
-        var repo = new UserRepository(App.DbContext);
+        var repo = new UserRepository(App.CreateDbContext());
         await repo.AddAsync(new User
         {
             Name = NameBox.Text.Trim(),

@@ -7,11 +7,31 @@ public static class DbInitializer
 {
     public static async Task InitializeAsync(ContextDb db)
     {
-        await db.Database.EnsureCreatedAsync();
+        if (!await db.Database.CanConnectAsync())
+            throw new InvalidOperationException(
+                "Нет подключения к PostgreSQL. Запустите службу PostgreSQL или Docker (порт 5432/5433).");
 
-        if (await db.Roles.AnyAsync())
-            return;
+        // Если таблицы уже созданы сидом — не трогаем схему
+        var created = await db.Database.EnsureCreatedAsync();
 
+        try
+        {
+            if (await db.Roles.AnyAsync())
+                return;
+        }
+        catch (Exception) when (!created)
+        {
+            // схема не совпала — пробуем создать недостающее
+            await db.Database.EnsureCreatedAsync();
+            if (await db.Roles.AnyAsync())
+                return;
+        }
+
+        await SeedAsync(db);
+    }
+
+    private static async Task SeedAsync(ContextDb db)
+    {
         var roles = new[]
         {
             new Role { Name = "Admin" },
@@ -81,12 +101,12 @@ public static class DbInitializer
         var stWork = statuses.First(s => s.Name == "В работе").Id;
         var stDone = statuses.First(s => s.Name == "Завершен").Id;
 
-        var o1 = new Order { DateCreated = new DateTime(2026, 10, 6, 9, 0, 0, DateTimeKind.Utc), StatusId = stWork, AutomobileId = car1.Id, MechanicId = mech1.Id };
-        var o2 = new Order { DateCreated = new DateTime(2026, 10, 7, 14, 0, 0, DateTimeKind.Utc), StatusId = stNew, AutomobileId = car2.Id, MechanicId = mech2.Id };
+        var o1 = new Order { DateCreated = DateTime.UtcNow.AddDays(-3), StatusId = stWork, AutomobileId = car1.Id, MechanicId = mech1.Id };
+        var o2 = new Order { DateCreated = DateTime.UtcNow.AddDays(-2), StatusId = stNew, AutomobileId = car2.Id, MechanicId = mech2.Id };
         var o3 = new Order
         {
-            DateCreated = new DateTime(2026, 10, 1, 10, 0, 0, DateTimeKind.Utc),
-            DateFinished = new DateTime(2026, 10, 1, 16, 0, 0, DateTimeKind.Utc),
+            DateCreated = DateTime.UtcNow.AddDays(-10),
+            DateFinished = DateTime.UtcNow.AddDays(-10).AddHours(6),
             StatusId = stDone,
             AutomobileId = car1.Id,
             MechanicId = mech1.Id
@@ -110,8 +130,8 @@ public static class DbInitializer
             new Payment { OrderId = o1.Id, Amount = 2000, Method = "Наличные" });
 
         db.Comments.AddRange(
-            new Comment { OrderId = o1.Id, Text = "Нужна проверка уровня масла", CreatedAt = new DateTime(2026, 10, 6, 10, 0, 0, DateTimeKind.Utc), IsFinalClientReview = false },
-            new Comment { OrderId = o3.Id, Text = "Отличный сервис, спасибо!", CreatedAt = new DateTime(2026, 10, 1, 17, 0, 0, DateTimeKind.Utc), IsFinalClientReview = true });
+            new Comment { OrderId = o1.Id, Text = "Нужна проверка уровня масла", CreatedAt = DateTime.UtcNow.AddDays(-3), IsFinalClientReview = false },
+            new Comment { OrderId = o3.Id, Text = "Отличный сервис, спасибо!", CreatedAt = DateTime.UtcNow.AddDays(-10), IsFinalClientReview = true });
 
         var days = new[] { "Пн", "Вт", "Ср", "Чт", "Пт" };
         foreach (var day in days)

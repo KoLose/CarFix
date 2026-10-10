@@ -15,7 +15,7 @@ public partial class Cars : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var repo = new CarRepository(App.DbContext);
+        var repo = new CarRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetAllAsync();
     }
 

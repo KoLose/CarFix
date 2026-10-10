@@ -18,7 +18,7 @@ public partial class Orders : UserControl
     private async System.Threading.Tasks.Task LoadAsync()
     {
         if (VariableData.CurrentUser == null) return;
-        var repo = new OrderRepository(App.DbContext);
+        var repo = new OrderRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetByMechanicAsync(VariableData.CurrentUser.Id);
     }
 

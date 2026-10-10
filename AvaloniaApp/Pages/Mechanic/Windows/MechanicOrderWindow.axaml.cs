@@ -27,7 +27,7 @@ public partial class MechanicOrderWindow : Window
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var orders = new OrderRepository(App.DbContext);
+        var orders = new OrderRepository(App.CreateDbContext());
         _order = await orders.GetByIdAsync(_orderId);
         if (_order == null || VariableData.CurrentUser == null) return;
 
@@ -40,9 +40,9 @@ public partial class MechanicOrderWindow : Window
         ServicesGrid.ItemsSource = _order.OrderServices.ToList();
 
         var serviceIds = _order.OrderServices.Select(os => os.ServiceId);
-        var skills = new UserServiceRepository(App.DbContext);
+        var skills = new UserServiceRepository(App.CreateDbContext());
         var hasSkills = await skills.HasAllServicesAsync(VariableData.CurrentUser.Id, serviceIds);
-        var shifts = new ShiftRepository(App.DbContext);
+        var shifts = new ShiftRepository(App.CreateDbContext());
         var hasShift = await shifts.HasFreeShiftAsync(VariableData.CurrentUser.Id, _order.DateCreated);
 
         _canTake = hasSkills && hasShift;
@@ -58,7 +58,7 @@ public partial class MechanicOrderWindow : Window
     {
         if (_order == null || VariableData.CurrentUser == null || !_canTake) return;
 
-        var users = new UserRepository(App.DbContext);
+        var users = new UserRepository(App.CreateDbContext());
         if (await users.IsBusyAtAsync(VariableData.CurrentUser.Id, _order.DateCreated, _order.Id))
         {
             await DialogHelper.ShowAsync(this, "У вас уже есть заказ на это время");
@@ -67,7 +67,7 @@ public partial class MechanicOrderWindow : Window
 
         _order.MechanicId = VariableData.CurrentUser.Id;
         _order.StatusId = StatusIds.InProgress;
-        await new OrderRepository(App.DbContext).UpdateAsync(_order);
+        await new OrderRepository(App.CreateDbContext()).UpdateAsync(_order);
         await DialogHelper.ShowAsync(this, "Заказ назначен вам");
         await LoadAsync();
     }
@@ -95,7 +95,7 @@ public partial class MechanicOrderWindow : Window
             return;
         }
 
-        var parts = new PartRepository(App.DbContext);
+        var parts = new PartRepository(App.CreateDbContext());
         foreach (var op in _order.OrderParts)
         {
             if (!await parts.HasEnoughAsync(op.PartId, op.Quantity))
@@ -106,7 +106,7 @@ public partial class MechanicOrderWindow : Window
             }
         }
 
-        var orders = new OrderRepository(App.DbContext);
+        var orders = new OrderRepository(App.CreateDbContext());
         await orders.CompleteServiceAsync(orderService);
 
         _order = await orders.GetByIdAsync(_orderId);
@@ -131,7 +131,7 @@ public partial class MechanicOrderWindow : Window
     private async void CommentClick(object? sender, RoutedEventArgs e)
     {
         if (_order == null || string.IsNullOrWhiteSpace(CommentBox.Text)) return;
-        await new CommentRepository(App.DbContext).AddAsync(new Comment
+        await new CommentRepository(App.CreateDbContext()).AddAsync(new Comment
         {
             OrderId = _order.Id,
             Text = CommentBox.Text.Trim(),

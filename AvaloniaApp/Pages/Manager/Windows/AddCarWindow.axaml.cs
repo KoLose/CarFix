@@ -16,7 +16,7 @@ public partial class AddCarWindow : Window
 
     private async System.Threading.Tasks.Task LoadClientsAsync()
     {
-        var repo = new UserRepository(App.DbContext);
+        var repo = new UserRepository(App.CreateDbContext());
         ClientBox.ItemsSource = await repo.GetClientsAsync();
     }
 
@@ -34,7 +34,7 @@ public partial class AddCarWindow : Window
             return;
         }
 
-        var repo = new CarRepository(App.DbContext);
+        var repo = new CarRepository(App.CreateDbContext());
         await repo.AddAsync(new Car
         {
             ClientId = client.Id,

@@ -26,15 +26,15 @@ public partial class TransferOrderWindow : Window
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var orders = new OrderRepository(App.DbContext);
+        var orders = new OrderRepository(App.CreateDbContext());
         _order = await orders.GetByIdAsync(_orderId);
         if (_order == null || VariableData.CurrentUser == null) return;
 
         var serviceIds = _order.OrderServices.Select(os => os.ServiceId);
-        var skills = new UserServiceRepository(App.DbContext);
+        var skills = new UserServiceRepository(App.CreateDbContext());
         var candidates = await skills.GetMechanicsWithServicesAsync(serviceIds);
-        var users = new UserRepository(App.DbContext);
-        var shifts = new ShiftRepository(App.DbContext);
+        var users = new UserRepository(App.CreateDbContext());
+        var shifts = new ShiftRepository(App.CreateDbContext());
 
         var available = new List<User>();
         foreach (var mechanic in candidates.Where(m => m.Id != VariableData.CurrentUser.Id))
@@ -57,7 +57,7 @@ public partial class TransferOrderWindow : Window
         }
 
         _order.MechanicId = mechanic.Id;
-        await new OrderRepository(App.DbContext).UpdateAsync(_order);
+        await new OrderRepository(App.CreateDbContext()).UpdateAsync(_order);
         Close();
     }
 }

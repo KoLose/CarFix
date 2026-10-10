@@ -1,24 +1,45 @@
-﻿using Avalonia;
-using System;
+﻿using System;
+using Avalonia;
+using Infastructure.DbContext;
 
 namespace AvaloniaApp;
 
 class Program
 {
-    // Initialization code. Don't use any Avalonia, third-party APIs or any
-    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-    // yet and stuff might break.
-    [STAThread]
-    public static void Main(string[] args) => BuildAvaloniaApp()
-        .StartWithClassicDesktopLifetime(args);
+    public static string? DbStartupError { get; private set; }
 
-    // Avalonia configuration, don't remove; also used by visual designer.
+    [STAThread]
+    public static void Main(string[] args)
+    {
+        // Npgsql + DateTime (timestamptz)
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+        // Инициализация БД ДО UI — иначе GetResult() на UI-потоке даёт deadlock и окно не появляется
+        try
+        {
+            using var db = new ContextDb();
+            DbInitializer.InitializeAsync(db).ConfigureAwait(false).GetAwaiter().GetResult();
+        }
+        catch (Exception ex)
+        {
+            DbStartupError = ex.GetBaseException().Message;
+            Console.Error.WriteLine("DB init failed: " + ex);
+        }
+
+        try
+        {
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine("FATAL: " + ex);
+            throw;
+        }
+    }
+
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-#if DEBUG
-            .WithDeveloperTools()
-#endif
             .WithInterFont()
             .LogToTrace();
 }

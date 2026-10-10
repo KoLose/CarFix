@@ -13,7 +13,7 @@ public partial class Orders : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var repo = new OrderRepository(App.DbContext);
+        var repo = new OrderRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetAllAsync();
     }
 }

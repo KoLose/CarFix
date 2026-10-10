@@ -32,7 +32,7 @@ public partial class Profile : UserControl
         VariableData.CurrentUser.Login = LoginBox.Text.Trim();
         VariableData.CurrentUser.Password = PasswordBox.Text;
 
-        var repo = new UserRepository(App.DbContext);
+        var repo = new UserRepository(App.CreateDbContext());
         await repo.UpdateAsync(VariableData.CurrentUser);
         StatusText.Text = "Данные сохранены";
     }

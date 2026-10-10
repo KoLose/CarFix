@@ -9,13 +9,22 @@ public static class DialogHelper
 {
     public static async Task ShowAsync(Window? owner, string message, string title = "Сообщение")
     {
+        var ok = new Button
+        {
+            Content = "OK",
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Classes = { "Button-UI" }
+        };
+
         var window = new Window
         {
             Title = title,
-            Width = 420,
-            Height = 180,
-            WindowStartupLocation = WindowStartupLocation.CenterOwner,
-            Background = Brush.Parse("#17172c"),
+            Width = 480,
+            Height = 220,
+            WindowStartupLocation = owner != null
+                ? WindowStartupLocation.CenterOwner
+                : WindowStartupLocation.CenterScreen,
+            Background = new SolidColorBrush(Color.Parse("#17172c")),
             Content = new StackPanel
             {
                 Margin = new Avalonia.Thickness(20),
@@ -28,22 +37,19 @@ public static class DialogHelper
                         TextWrapping = TextWrapping.Wrap,
                         Foreground = Brushes.White
                     },
-                    new Button
-                    {
-                        Content = "OK",
-                        HorizontalAlignment = HorizontalAlignment.Right,
-                        Classes = { "Button-UI" }
-                    }
+                    ok
                 }
             }
         };
 
-        if (window.Content is StackPanel panel && panel.Children[1] is Button ok)
-            ok.Click += (_, _) => window.Close();
+        ok.Click += (_, _) => window.Close();
 
         if (owner != null)
             await window.ShowDialog(owner);
         else
+        {
             window.Show();
+            await Task.CompletedTask;
+        }
     }
 }

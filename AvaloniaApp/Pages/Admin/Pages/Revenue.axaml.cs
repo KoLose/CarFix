@@ -16,8 +16,8 @@ public partial class Revenue : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var payments = new PaymentRepository(App.DbContext);
-        var parts = new PartRepository(App.DbContext);
+        var payments = new PaymentRepository(App.CreateDbContext());
+        var parts = new PartRepository(App.CreateDbContext());
         var totalPayments = await payments.GetTotalAsync();
         var totalParts = await parts.GetTotalPurchaseCostAsync();
         var profit = totalPayments - totalParts;

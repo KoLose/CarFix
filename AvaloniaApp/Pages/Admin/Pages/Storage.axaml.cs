@@ -13,7 +13,7 @@ public partial class Storage : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var repo = new PartRepository(App.DbContext);
+        var repo = new PartRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetAllAsync();
     }
 }

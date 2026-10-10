@@ -16,7 +16,7 @@ public partial class Mechanics : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var repo = new UserRepository(App.DbContext);
+        var repo = new UserRepository(App.CreateDbContext());
         Grid.ItemsSource = await repo.GetMechanicsAsync();
     }
 
@@ -28,7 +28,7 @@ public partial class Mechanics : UserControl
             return;
         }
 
-        var users = new UserRepository(App.DbContext);
+        var users = new UserRepository(App.CreateDbContext());
         if (await users.HasActiveOrdersAsync(mechanic.Id))
         {
             await DialogHelper.ShowAsync(TopLevel.GetTopLevel(this) as Window,
@@ -36,7 +36,7 @@ public partial class Mechanics : UserControl
             return;
         }
 
-        var shifts = new ShiftRepository(App.DbContext);
+        var shifts = new ShiftRepository(App.CreateDbContext());
         foreach (var shift in await shifts.GetByUserAsync(mechanic.Id))
         {
             shift.UserId = null;

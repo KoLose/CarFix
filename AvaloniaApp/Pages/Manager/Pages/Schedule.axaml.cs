@@ -17,8 +17,8 @@ public partial class Schedule : UserControl
 
     private async System.Threading.Tasks.Task LoadAsync()
     {
-        var shifts = new ShiftRepository(App.DbContext);
-        var users = new UserRepository(App.DbContext);
+        var shifts = new ShiftRepository(App.CreateDbContext());
+        var users = new UserRepository(App.CreateDbContext());
         Grid.ItemsSource = await shifts.GetAllAsync();
         MechanicBox.ItemsSource = await users.GetMechanicsAsync();
     }
@@ -37,7 +37,7 @@ public partial class Schedule : UserControl
             return;
         }
 
-        var users = new UserRepository(App.DbContext);
+        var users = new UserRepository(App.CreateDbContext());
         if (shift.UserId is int currentId)
         {
             var today = DateTime.Today;
@@ -51,7 +51,7 @@ public partial class Schedule : UserControl
         }
 
         shift.UserId = newMechanic.Id;
-        var shifts = new ShiftRepository(App.DbContext);
+        var shifts = new ShiftRepository(App.CreateDbContext());
         await shifts.UpdateAsync(shift);
         await LoadAsync();
     }
