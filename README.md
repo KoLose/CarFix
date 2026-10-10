@@ -1,110 +1,68 @@
 # CarFix
 
-Автосервис: Avalonia + **PostgreSQL**.
+Автосервис на Avalonia.  
+Для разработки — **PostgreSQL**. Для скринов другу — **портативный ZIP со встроенной БД** (ничего ставить не нужно).
 
 Логины: `admin`/`admin` · `manager`/`manager` · `mech1`/`mech1`
 
 ---
 
-## Mac — самый простой способ (без Docker)
+## Другу на Mac / Windows — самый лёгкий способ (для скринов)
 
-Другу на Mac: **только это**.
+Не нужен Docker, не нужен PostgreSQL, не нужен Terminal.
 
-### 1. Скачай проект
-```bash
-git clone https://github.com/KoLose/CarFix.git
-cd CarFix
-git checkout feature/role-pages-and-db
+1. Возьми ZIP из папки `dist/` (или Release на GitHub):
+   - **Mac на чипе M1/M2/M3/M4** → `CarFix-Mac-AppleSilicon.zip`
+   - **Mac Intel** → `CarFix-Mac-Intel.zip`
+   - **Windows** → `CarFix-Windows.zip`
+2. Распакуй ZIP
+3. Запусти:
+   - Windows: `AvaloniaApp.exe`
+   - Mac: `AvaloniaApp` (если macOS ругается: правой кнопкой → **Открыть** → Открыть)
+4. Войди (`admin` / `admin`) и сделай скрины
+
+База лежит **внутри папки** в файле `carfix.db` — создаётся сама при первом запуске с тестовыми данными.
+
+Собрать ZIP заново на своём ПК:
+```powershell
+.\scripts\publish-portable.ps1
 ```
 
-### 2. Один раз разреши скрипт и запусти
+---
+
+## Разработка с PostgreSQL (как раньше)
+
+### Mac
 ```bash
 chmod +x scripts/start-mac.sh
 ./scripts/start-mac.sh
 ```
 
-Скрипт сам:
-- поставит PostgreSQL (через Homebrew), если его нет  
-- создаст базу `carfixdb`  
-- поставит .NET, если нужно  
-- откроет окно программы  
-
-Если спросит пароль Mac — это нормально (Homebrew).  
-Первый запуск может занять несколько минут.
-
-### 3. Войди
-- Админ: `admin` / `admin`  
-- Менеджер: `manager` / `manager`  
-- Механик: `mech1` / `mech1`  
-
----
-
-## Windows — тоже просто (без Docker)
-
-1. Установи [PostgreSQL](https://www.postgresql.org/download/windows/) — пароль пользователя `postgres` сделай **`123`**  
-2. Установи [.NET 9 SDK](https://dotnet.microsoft.com/download)  
-3. В PowerShell из папки проекта:
-
+### Windows
 ```powershell
 .\scripts\start-windows.ps1
 ```
 
-Или вручную:
-```powershell
-cd Infastructure\Sql
-.\setup_db.ps1
-cd ..\..\AvaloniaApp
-dotnet run
-```
+Приложение само найдёт PostgreSQL или, если его нет, включит встроенный `carfix.db`.
 
 ---
 
-## Что делает программа сама
+## Роли
 
-При старте CarFix:
-1. Ищет PostgreSQL на компьютере (Windows `postgres/123` или Mac-пользователь Homebrew)  
-2. Создаёт базу `carfixdb`, если её нет  
-3. Создаёт таблицы и тестовые данные, если база пустая  
-
-**Docker не обязателен.** PostgreSQL — обязателен (ставит скрипт на Mac).
-
----
-
-## Если на Mac «не работает»
-
-1. Установи Homebrew: https://brew.sh  
-2. Открой **Terminal**, перейди в папку `CarFix` (`cd .../CarFix`)  
-3. Снова:
-```bash
-chmod +x scripts/start-mac.sh
-./scripts/start-mac.sh
-```
-4. Если окно не открылось — скопируй красный текст ошибки из Terminal и пришли другу/автору  
-
-Проверка, что PostgreSQL жив:
-```bash
-brew services list
-psql -d carfixdb -c "SELECT 1"
-```
-
----
-
-## Роли (кратко)
-
-| Роль | Логин | Что делать |
-|------|--------|------------|
+| Роль | Логин | Что смотреть на скринах |
+|------|--------|-------------------------|
 | Админ | `admin` | заказы, выручка, склад |
-| Менеджер | `manager` | клиенты, машины, заказы (двойной клик), расписание |
-| Механик | `mech1` | мои заказы (двойной клик), запрос на склад |
+| Менеджер | `manager` | клиенты, машины, заказы, расписание |
+| Механик | `mech1` | мои заказы, запрос на склад |
 
 ---
 
-## Docker (не обязательно)
+## Важно
 
-Только если хочешь UI в браузере. Сначала запусти Docker Desktop:
-```bash
-docker compose up -d --build
-```
-Открой http://localhost:6080/vnc.html  
+| Режим | База |
+|--------|------|
+| Портативный ZIP (`portable.marker`) | файл `carfix.db` рядом с программой |
+| Обычный запуск + есть PostgreSQL | PostgreSQL (`carfixdb`) |
+| Обычный запуск, PostgreSQL нет | автоматически `carfix.db` |
 
-Подробнее: [DOCKER.md](DOCKER.md) · Word: `CarFix_Guide.docx`
+Docker не обязателен. Подробности: [DOCKER.md](DOCKER.md)

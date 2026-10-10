@@ -7,21 +7,27 @@ public static class DbInitializer
 {
     public static async Task InitializeAsync(ContextDb db)
     {
-        if (!await db.Database.CanConnectAsync())
+        try
+        {
+            await db.Database.EnsureCreatedAsync();
+        }
+        catch (Exception ex)
+        {
             throw new InvalidOperationException(
-                "Нет подключения к PostgreSQL. Запустите службу PostgreSQL или Docker (порт 5432/5433).");
-
-        // Если таблицы уже созданы сидом — не трогаем схему
-        var created = await db.Database.EnsureCreatedAsync();
+                "Не удалось открыть или создать базу данных.\n" +
+                "Portable: файл carfix.db рядом с программой.\n" +
+                "PostgreSQL: запусти scripts/start-mac.sh или start-windows.ps1.\n\n" +
+                ex.GetBaseException().Message,
+                ex);
+        }
 
         try
         {
             if (await db.Roles.AnyAsync())
                 return;
         }
-        catch (Exception) when (!created)
+        catch
         {
-            // схема не совпала — пробуем создать недостающее
             await db.Database.EnsureCreatedAsync();
             if (await db.Roles.AnyAsync())
                 return;

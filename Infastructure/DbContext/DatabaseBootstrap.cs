@@ -3,27 +3,21 @@ using Npgsql;
 
 namespace Infastructure.DbContext;
 
-/// <summary>
-/// Сам находит PostgreSQL, создаёт БД carfixdb при необходимости и выбирает рабочую строку подключения.
-/// </summary>
 public static class DatabaseBootstrap
 {
     public static async Task<string> EnsureReadyAsync()
     {
-        var errors = new List<string>();
+        // Портативная сборка / если PostgreSQL нет — встроенный файл carfix.db (SQLite)
+        if (ConnectionHelper.IsPortableMode())
+            return await UseSqliteAsync("portable mode");
 
-        foreach (var candidate in ConnectionHelper.GetCandidates())
+        var errors = new List<string>();
+        foreach (var candidate in ConnectionHelper.GetPostgresCandidates())
         {
             try
             {
-                try
-                {
-                    await EnsureDatabaseExistsAsync(candidate);
-                }
-                catch
-                {
-                    // На части Mac-установок CREATE DATABASE не нужен / недоступен — пробуем connect as-is
-                }
+                try { await EnsurePostgresDatabaseExistsAsync(candidate); }
+                catch { /* ignore */ }
 
                 var options = new DbContextOptionsBuilder<ContextDb>()
                     .UseNpgsql(candidate)
@@ -33,7 +27,7 @@ public static class DatabaseBootstrap
                 if (!await test.Database.CanConnectAsync())
                     continue;
 
-                ConnectionHelper.SetConnectionString(candidate);
+                ConnectionHelper.SetConnectionString(candidate, sqlite: false);
                 await DbInitializer.InitializeAsync(test);
                 Console.WriteLine("PostgreSQL OK: " + Mask(candidate));
                 return candidate;
@@ -44,16 +38,27 @@ public static class DatabaseBootstrap
             }
         }
 
-        throw new InvalidOperationException(
-            "Не удалось подключиться к PostgreSQL.\n\n" +
-            "На Mac открой Terminal в папке CarFix и выполни ДВЕ команды:\n" +
-            "  chmod +x scripts/start-mac.sh\n" +
-            "  ./scripts/start-mac.sh\n\n" +
-            "Скрипт сам поставит PostgreSQL, создаст базу и откроет программу.\n\n" +
-            "Детали:\n" + string.Join("\n", errors.Take(8)));
+        Console.WriteLine("PostgreSQL недоступен — включаю встроенную БД carfix.db");
+        Console.WriteLine(string.Join("\n", errors.Take(4)));
+        return await UseSqliteAsync("fallback");
     }
 
-    private static async Task EnsureDatabaseExistsAsync(string appConnection)
+    private static async Task<string> UseSqliteAsync(string reason)
+    {
+        var cs = ConnectionHelper.GetSqliteConnectionString();
+        ConnectionHelper.SetConnectionString(cs, sqlite: true);
+
+        var options = new DbContextOptionsBuilder<ContextDb>()
+            .UseSqlite(cs)
+            .Options;
+
+        await using var db = new ContextDb(options);
+        await DbInitializer.InitializeAsync(db);
+        Console.WriteLine($"SQLite OK ({reason}): {ConnectionHelper.GetSqlitePath()}");
+        return cs;
+    }
+
+    private static async Task EnsurePostgresDatabaseExistsAsync(string appConnection)
     {
         var builder = new NpgsqlConnectionStringBuilder(appConnection);
         var dbName = string.IsNullOrWhiteSpace(builder.Database) ? "carfixdb" : builder.Database;
@@ -66,15 +71,13 @@ public static class DatabaseBootstrap
         {
             check.CommandText = "SELECT 1 FROM pg_database WHERE datname = @n";
             check.Parameters.AddWithValue("n", dbName);
-            var exists = await check.ExecuteScalarAsync();
-            if (exists != null)
+            if (await check.ExecuteScalarAsync() != null)
                 return;
         }
 
         await using var create = conn.CreateCommand();
         create.CommandText = $"CREATE DATABASE \"{dbName.Replace("\"", "\"\"")}\"";
         await create.ExecuteNonQueryAsync();
-        Console.WriteLine($"Created database {dbName}");
     }
 
     private static string Mask(string cs)
@@ -82,13 +85,9 @@ public static class DatabaseBootstrap
         try
         {
             var b = new NpgsqlConnectionStringBuilder(cs);
-            if (!string.IsNullOrEmpty(b.Password))
-                b.Password = "***";
+            if (!string.IsNullOrEmpty(b.Password)) b.Password = "***";
             return b.ToString();
         }
-        catch
-        {
-            return cs;
-        }
+        catch { return cs; }
     }
 }

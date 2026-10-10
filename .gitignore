@@ -7,3 +7,7 @@
 .DS_Store
 AvaloniaDemo/
 _req.txt
+dist/
+*.db
+*.db-shm
+*.db-wal

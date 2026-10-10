@@ -33,7 +33,11 @@ public class ContextDb : Microsoft.EntityFrameworkCore.DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql(ConnectionHelper.GetConnectionString());
+            var cs = ConnectionHelper.GetConnectionString();
+            if (ConnectionHelper.UseSqlite || cs.Contains("Data Source=", StringComparison.OrdinalIgnoreCase))
+                optionsBuilder.UseSqlite(cs);
+            else
+                optionsBuilder.UseNpgsql(cs);
         }
     }
 
